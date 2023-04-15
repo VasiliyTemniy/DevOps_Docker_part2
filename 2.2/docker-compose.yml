@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+
+    simple-web-service:
+      image: devopsdockeruh/simple-web-service
+      build: .
+      volumes:
+        - ./output.log:/usr/src/app/text.log
+      container_name: exercise-sws
+      command: server
+      ports:
+        - 8080:8080
