@@ -9,7 +9,6 @@ COPY go.sum go.sum
 
 
 FROM base AS build-stage
-ENV PORT=8080 REQUEST_ORIGIN=http://localhost:5000
 
 COPY . .
 

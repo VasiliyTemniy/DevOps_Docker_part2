@@ -11,7 +11,6 @@ RUN npm install -g serve
 
 
 FROM base AS build-stage
-ENV NODE_ENV=production REACT_APP_BACKEND_URL=http://localhost:8000/
 
 COPY . .
 
