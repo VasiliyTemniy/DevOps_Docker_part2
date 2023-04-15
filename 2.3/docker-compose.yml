@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+
+    backend:
+      image: example-backend
+      environment:
+        - PORT=8080
+        - REQUEST_ORIGIN=http://localhost:5000
+      build:
+        context: ./example-backend
+        dockerfile: Dockerfile
+      container_name: exercise-backend
+      ports:
+        - 8000:8080
+    frontend:
+      image: example-frontend
+      environment:
+        - NODE_ENV=production
+        - REACT_APP_BACKEND_URL=http://localhost:8000/
+      build:
+        context: ./example-frontend
+        dockerfile: Dockerfile
+      container_name: exercise-frontend
+      ports:
+        - 5000:5000
